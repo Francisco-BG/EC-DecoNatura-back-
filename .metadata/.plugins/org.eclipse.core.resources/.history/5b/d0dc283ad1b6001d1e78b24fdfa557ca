@@ -1,0 +1,5 @@
+package com.deconatura.service;
+
+public class UserService {
+
+}

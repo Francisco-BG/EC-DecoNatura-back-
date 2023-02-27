@@ -1,0 +1,1 @@
+INSERT INTO user(idcliente,name,phone,email) VALUES (1,"Fer","55556666", "fer@gmail.com");
