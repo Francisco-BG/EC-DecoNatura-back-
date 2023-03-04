@@ -1,5 +1,0 @@
-package com.deconatura.service;
-
-public interface IUserService {
-
-}

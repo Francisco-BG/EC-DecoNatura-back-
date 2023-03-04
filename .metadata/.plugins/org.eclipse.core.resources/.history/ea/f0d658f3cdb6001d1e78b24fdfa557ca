@@ -1,5 +1,0 @@
-package com.deconatura.repository;
-
-public class IUserRepository {
-
-}
