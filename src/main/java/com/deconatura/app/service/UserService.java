@@ -37,12 +37,19 @@ public class UserService implements IUserService{
 		return userRepository.findByPhone(phone);
 	}
 
-	@Override
-	public String setUser(User user) {
+	/*@Override
+	public User setUser(User user) {
 		
 		userRepository.save(user);
-		// TODO Auto-generated method stub
+		// 
 		return "Usuario guardado con éxito.";
+	}*/
+	public User setUser(User user) {
+        /*if ( existUserByEmail(user.getEmail() ) )
+            throw new IllegalStateException("The user already exists with email: " + usuario.getEmail());
+        else if ( usuario.getEmail().length() > 150 )
+            throw new IllegalStateException("Email length is greater than: " + 150);*/
+
+        return userRepository.save(user);
 	}
-	
 }

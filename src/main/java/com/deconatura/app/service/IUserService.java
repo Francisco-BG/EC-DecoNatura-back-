@@ -9,6 +9,6 @@ public interface IUserService {
 	public User getUserByName(String name);
 	public User getUserByEmail(String email);
 	public User getUserByPhone(String phone);
-	
-	public String setUser(User user);
+	public User setUser(User user);
+	//public String setUser(User user);
 }

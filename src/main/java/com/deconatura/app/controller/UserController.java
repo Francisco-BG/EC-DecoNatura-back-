@@ -1,6 +1,8 @@
 package com.deconatura.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,9 +32,22 @@ public class UserController {
 		return userService.getUserByEmail(email);
 	}
 
-	@PostMapping()
+	/*@PostMapping()
 	public String setUser(@RequestBody User user) {
 		System.out.println("recibí " + user);
-		return userService.setUser(user); 
+		return "0"; 
+	}*/
+	
+	@PostMapping()
+    public ResponseEntity<?> setNewUser(@RequestBody User user) {
+        try {
+        	System.out.println(user+" guardado.");
+            return new ResponseEntity<User>(
+                    userService.setUser(user),
+                    HttpStatus.CREATED);
+
+        } catch (IllegalStateException e) {
+            return new ResponseEntity<String>(e.getMessage() , HttpStatus.BAD_REQUEST );
+        }
 	}
 }

@@ -1,5 +1,6 @@
 package com.deconatura.app.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,9 +13,16 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long userId; 
 	
+	@Column(nullable = false)
 	private String name;
+	
+	@Column(unique=true, nullable = false)
 	private String email;
+	
+	@Column(nullable = false)
 	private String phone;
+	
+	@Column(nullable = false)
 	private String password;
 	
 	public User() {	}
