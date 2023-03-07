@@ -20,12 +20,12 @@ public class UserController {
 	@Autowired
 	IUserService userService;
 	
-	@GetMapping("{id}")
+	@GetMapping("/id/{id}")
 	public User getUserById(@PathVariable("id") long userId) {
 		return userService.getUserById(userId);
 	} 
 	
-	@GetMapping("{email}")
+	@GetMapping("/email/{email}")
 	public User getUserByEmail(@PathVariable("email") String email){
 		return userService.getUserByEmail(email);
 	}
