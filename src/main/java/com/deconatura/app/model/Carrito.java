@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.annotation.Generated;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,4 +29,7 @@ public class Carrito {
     )
     private List<Product> productos = new ArrayList<>();
 
+
+    @Column(name = "fk_carrito_id_carrito")
+    private long fkCarritoIdCarritoId;
 }

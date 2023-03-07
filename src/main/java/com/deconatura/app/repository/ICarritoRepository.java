@@ -7,5 +7,5 @@ import com.deconatura.app.model.Carrito;
 public interface ICarritoRepository extends CrudRepository<Carrito,Long>{
     List<Carrito> findAll();
     Carrito findById(long ind); 
-    List<Carrito> findAllByFkCarritoIdCarritoId(long productoId);
+    List<Carrito> findAllByFkCarritoIdCarritoId(long productoIdfkCarritoIdCarrito);
 }
