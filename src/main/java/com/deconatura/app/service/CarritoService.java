@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.deconatura.app.model.Carrito;
 import com.deconatura.app.repository.ICarritoRepository;
 
+@Service
 public class CarritoService implements ICarritoService{
 
     @Autowired
