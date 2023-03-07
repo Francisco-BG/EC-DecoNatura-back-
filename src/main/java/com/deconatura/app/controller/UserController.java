@@ -23,6 +23,11 @@ public class UserController {
 		return userService.getUserById(userId);
 	} 
 	
+	@GetMapping("{email}")
+	public User getUserByEmail(@PathVariable("email") String email){
+		return userService.getUserByEmail(email);
+	}
+
 	@PostMapping()
 	public String setUser(@RequestBody User user) {
 		System.out.println("recibí " + user);
