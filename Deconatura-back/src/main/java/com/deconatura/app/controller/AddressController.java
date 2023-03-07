@@ -39,7 +39,7 @@ public class AddressController {
 	}
 	
 	@PostMapping("addresses")
-    public ResponseEntity<?> setNewUsuario(@RequestBody Address address) {
+    public ResponseEntity<?> setNewAddress(@RequestBody Address address) {
         try {
             return new ResponseEntity<Address>(
                     addressService.setAddress(address),

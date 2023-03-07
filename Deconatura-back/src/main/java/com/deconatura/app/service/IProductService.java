@@ -11,14 +11,14 @@ public interface IProductService {
 
     List<Product> getAllProducts();
 
+    Product getProductById(int id);
+    
+    Product setProduct(Product product);
+    
     Product updateProduct(Product product);
-
-    Product saveProduct(Product product);
 
     int deleteProductById(int productId);
 
     Boolean productExistsById(int id);
-
-    Product getProductById(int id);
 
 }

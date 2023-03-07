@@ -14,35 +14,54 @@ public class ProductService implements IProductService {
 
     @Autowired
     IProductRepository productRepository;
-
-
+    
+    
     @Override
     public List<Product> getAllProducts() {
-        return (List<Product>) productRepository.findAll();
+    	List<Product> allProducts = productRepository.findAll();
+    	return allProducts;
     }
+    
+	@Override
+	public List<Product> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    @Override
-    public Product updateProduct(Product newProduct) {
-        if (!productExistsById(newProduct.getProducto()))
-            throw new IllegalStateException("The product with id: " + newProduct.getIdProduct() +  " doesn't exist");
+	@Override
+	public Boolean productExistsById(int id) {
+		return productRepository.existsById(id);
+	}
 
-        Product product = getProductById(newProduct.getProducto());
-        updateProduct(newProduct,product);
+	@Override
+	public Product getProductById(int id) {
+		return productRepository.findById(id);
+	}
 
-        productRepository.save(product);
-        return product;
-    }
+	@Override
+	public Product setProduct(Product product) {
+		return productRepository.save(product);
+	}
 
-    @Override
-    public Product saveProduct(Product product) {
-        return productRepository.save(product);
-    }
 
-    @Override
-    public int deleteProductById(int productId) {
-        Product product = getProductById(productId);
-        productRepository.deleteById(productId);
-        return productId;
-    }
+	@Override
+	public Product updateProduct(Product newProduct) {
+		Product product = getProductById(newProduct.getId());
+		product.setCategoria(newProduct.getCategoria());
+		product.setImagen(newProduct.getImagen());
+		product.setPrecio(newProduct.getPrecio());
+		product.setProducto(newProduct.getProducto());
+		product.setStock(newProduct.getStock());
+		product.setSubcategoria(newProduct.getSubcategoria());
+		return productRepository.save(product);
+	}
+
+	@Override
+	public int deleteProductById(int productId) {
+		Product product = getProductById(productId);
+		productRepository.delete(product);
+		return productId;
+	}
+
 
 }
