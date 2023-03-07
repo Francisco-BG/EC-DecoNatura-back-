@@ -18,11 +18,7 @@ public class Carrito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToMany(mappedBy = "carrito")
-    @JoinTable(
-        name = "carrito_producto",
-        joinColumns = @JoinColumn(name = "carrito_id")
-    )
+    @ManyToMany(mappedBy = "carritos")
     private List<Product> productos = new ArrayList<>();
 
 }
