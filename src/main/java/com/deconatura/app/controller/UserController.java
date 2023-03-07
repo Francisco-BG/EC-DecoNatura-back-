@@ -1,6 +1,7 @@
 package com.deconatura.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import com.deconatura.app.service.IUserService;
 
 @RestController
 @RequestMapping("api/users")
+@CrossOrigin
 public class UserController {
 	
 	@Autowired
