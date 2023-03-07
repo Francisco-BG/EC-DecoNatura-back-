@@ -23,14 +23,29 @@ public class ProductController {
     }
     
     @PostMapping("/catalogo")
-    public Product saveProduct(@RequestBody Product product){
-        return productService.saveProduct(product);
-
+    public ResponseEntity<?> setNewProduct(@RequestBody Product product){
+        //return productService.setProduct(product);
+    	try {
+			return new ResponseEntity<Product>(
+				productService.setProduct(product),
+				HttpStatus.CREATED
+				);
+		} catch (IllegalStateException e) {
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+        
     }
 
     @PutMapping("/catalogo")
-    public Product updateProduct(@RequestBody Product newDataProduct){
-        return productService.updateProduct(newDataProduct);
+    public ResponseEntity<?> updateProduct(@RequestBody Product newDataProduct){
+    	try {
+			return new ResponseEntity<Product>(
+				productService.updateProduct(newDataProduct),
+				HttpStatus.CREATED
+				);
+		} catch (IllegalStateException e) {
+			return new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
+		}
     }
 
     //Delete mapping

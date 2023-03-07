@@ -29,11 +29,11 @@ public class AddressService implements IAddressService{
 	@Override
 	public Address updateAddress(Address newAddress) {
 		Address address = getAddressById(newAddress.getIdAddress());
-		address.setState( newAddress.getState() );
-		address.setCity( newAddress.getCity() );
-		address.setStreet( newAddress.getStreet() );
-		address.setNumber( newAddress.getNumber() );
-		address.setZipCode( newAddress.getZipCode() );
+		address.setAddress(newAddress.getAddress());
+		address.setZipCode(newAddress.getZipCode());
+		address.setState(newAddress.getState());
+		address.setMunicipio(newAddress.getMunicipio());
+		address.setPrecio(newAddress.getPrecio());
 		return addressRepository.save(address);
 	}
 
@@ -52,7 +52,7 @@ public class AddressService implements IAddressService{
 	}
 
 	@Override
-	public List<Address> getAllAddressesByFkUserId(int userId) {
+	public List<Address> getAllAddressesByFkUserId1(long userId){
 		return addressRepository.findAllByFkUserIdUserId(userId);
 	}
 }

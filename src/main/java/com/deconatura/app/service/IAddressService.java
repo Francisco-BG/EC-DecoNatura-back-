@@ -8,13 +8,13 @@ public interface IAddressService {
 
 	public List<Address> getAllAddresses();
 	
+	public Address getAddressById(int idAddress);
+	
 	public Address setAddress(Address address);
 	
 	public Address updateAddress(Address address);
 	
 	public String deleteAddressById(int idAddress);
 
-	public Address getAddressById(int idAddress);
-	
-	//public List<Address> getAllAddressesByFkUserId(int userId);
+	List<Address> getAllAddressesByFkUserId1(long userId);
 }
