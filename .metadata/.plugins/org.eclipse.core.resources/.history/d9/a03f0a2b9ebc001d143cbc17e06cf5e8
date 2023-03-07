@@ -1,0 +1,62 @@
+package com.deconatura.app.service;
+
+import com.deconatura.app.model.Product;
+import com.deconatura.app.repository.IProductRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ProductService implements IProductService {
+
+    @Autowired
+    IProductRepository productRepository;
+    
+    
+    @Override
+    public List<Product> getAllProducts() {
+    	List<Product> allProducts = productRepository.findAll();
+    	return allProducts;
+    }
+    
+	@Override
+	public List<Product> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean productExistsById(long id) {
+		return productRepository.existsById(id);
+	}
+
+	@Override
+	public Product getProductById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product setProduct(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Product updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int deleteProductById(int productId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+}

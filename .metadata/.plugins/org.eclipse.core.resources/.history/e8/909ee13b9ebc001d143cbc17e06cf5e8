@@ -1,0 +1,24 @@
+package com.deconatura.app.service;
+
+import com.deconatura.app.model.Product;
+
+import java.util.List;
+
+
+public interface IProductService {
+
+    List<Product> findAll();
+
+    List<Product> getAllProducts();
+
+    Product getProductById(long id);
+    
+    Product setProduct(Product product);
+    
+    Product updateProduct(Product product);
+
+    int deleteProductById(long productId);
+
+    Boolean productExistsById(long id);
+
+}
