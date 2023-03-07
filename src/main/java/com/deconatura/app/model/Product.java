@@ -39,13 +39,8 @@ public class Product{
 	@Column(nullable = false)
 	private int stock;
 
-	@ManyToMany
-	@JoinTable(
-    name = "carrito_producto",
-    joinColumns = @JoinColumn(name="product_id"),
-	inverseJoinColumns = @JoinColumn(name="carrito_id")
-	)
-	private List<Carrito> carritos = new ArrayList<>();
+	@ManyToMany(mappedBy = "productos")
+    private List<Carrito> carritos = new ArrayList<>();
 
 	public Product() {}
 
