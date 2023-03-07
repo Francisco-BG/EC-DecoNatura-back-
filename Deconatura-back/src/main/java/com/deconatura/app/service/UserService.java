@@ -3,7 +3,7 @@ package com.deconatura.app.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.deconatura.app.entity.User;
+import com.deconatura.app.model.User;
 import com.deconatura.app.repository.IUserRepository;
 
 @Service
@@ -14,9 +14,9 @@ public class UserService implements IUserService{
 	IUserRepository userRepository;	
 	
 	@Override
-	public User getUserById(long idcliente) {
+	public User getUserById(long user_id) {
 		// TODO Auto-generated method stub
-		return userRepository.findById(idcliente);
+		return userRepository.findById(user_id);
 	}
 
 	@Override

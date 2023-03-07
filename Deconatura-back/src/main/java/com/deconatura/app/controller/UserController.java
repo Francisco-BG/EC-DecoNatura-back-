@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.deconatura.app.entity.User;
+import com.deconatura.app.model.User;
 import com.deconatura.app.service.IUserService;
 
 @RestController
@@ -19,12 +19,13 @@ public class UserController {
 	IUserService userService;
 	
 	@GetMapping("{id}")
-	public User getUserById(@PathVariable("id") int userId) {
+	public User getUserById(@PathVariable("id") long userId) {
 		return userService.getUserById(userId);
 	} 
 	
 	@PostMapping()
 	public String setUser(@RequestBody User user) {
+		System.out.println("recibí " + user);
 		return userService.setUser(user); 
 	}
 }

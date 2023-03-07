@@ -1,4 +1,4 @@
-package com.deconatura.app.entity;
+package com.deconatura.app.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idcliente; 
+	private long userId; 
 	
 	private String name;
 	private String email;
@@ -50,6 +50,8 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	public String toString() {
+		return "id: "+ userId +" nombre: " + name + " password: " + password + " tel: " + phone;
+	}
 	
 }

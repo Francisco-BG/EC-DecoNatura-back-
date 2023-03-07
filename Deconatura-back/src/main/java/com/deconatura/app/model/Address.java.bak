@@ -1,0 +1,7 @@
+package com.deconatura.app.model;
+
+import jakarta.persistence.Entity;
+
+public class Address {
+
+}

@@ -1,6 +1,6 @@
 package com.deconatura.app.service;
 
-import com.deconatura.app.entity.User;
+import com.deconatura.app.model.User;
 
 
 public interface IUserService {
